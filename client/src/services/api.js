@@ -1,6 +1,6 @@
 import axios from "axios";
 const API = axios.create({
-  baseURL: "https://home-services-jyvw.onrender.com",
+  baseURL: "https://home-services-jyvw.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
