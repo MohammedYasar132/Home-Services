@@ -8,6 +8,7 @@ const API = axios.create({
 // Services API Methods
 export const getServices = async () => {
   const response = await API.get("/services");
+  console.log(response);
   return response.data;
 };
 export const getServiceById = async (id) => {
