@@ -43,7 +43,9 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          scrolled ? "glass-nav py-3 shadow-md" : "bg-transparent py-5"
+          scrolled
+            ? "glass-nav py-2 md:py-3 shadow-md"
+            : "bg-transparent py-0 md:py-5"
         }`}
       >
         {/* Mobile Top Contact Bar */}
