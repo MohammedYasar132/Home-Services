@@ -331,7 +331,7 @@ const HeroSection = ({
             </motion.div>
           </div>
           {/* Right Column Layout: Modern floating cards */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end h-[420px] md:h-[480px]">
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-end h-[380px] sm:h-[430px] md:h-[480px]">
             {/* Visual Backdrops */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary-100/10 rounded-3xl -z-10" />
             <div className="relative w-full max-w-[500px] h-full flex items-center justify-center">
@@ -347,32 +347,31 @@ const HeroSection = ({
                 className="absolute z-30 flex items-center justify-center"
               >
                 {/* Rotating Ring */}
-                <div className="absolute w-58 h-58 rounded-full border-2 border-dashed border-primary-300 animate-spin-slow"></div>
-
-                <div className="relative w-55 h-55 rounded-full bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 p-[3px] shadow-2xl">
+                <div className="absolute w-40 h-40 sm:w-48 sm:h-48 md:w-58 md:h-58 rounded-full border-2 border-dashed border-primary-300 animate-spin-slow"></div>
+                <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-55 md:h-55 rounded-full bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 p-[3px] shadow-2xl">
                   <div className="w-full h-full rounded-full bg-white flex flex-col items-center justify-center text-center px-5">
                     {/* Icon goes HERE */}
-                    <div className="bg-primary-100 p-3 rounded-full">
-                      <HiSparkles className="text-primary-600 text-2xl" />
+                    <div className="bg-primary-100 p-2 sm:p-3 rounded-full">
+                      <HiSparkles className="text-primary-600 text-lg sm:text-xl md:text-2xl" />
                     </div>
 
-                    <p className="text-[11px] uppercase tracking-[0.35em] text-gray-500 font-semibold">
+                    <p className="text-[8px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.35em] text-gray-500 font-semibold">
                       Premium
                     </p>
 
-                    <h2 className="text-2xl font-black text-primary-700 leading-tight">
+                    <h2 className="text-base sm:text-xl md:text-2xl font-black text-primary-700 leading-tight">
                       Interior
                     </h2>
 
-                    <h2 className="text-2xl font-black text-gray-900 leading-tight">
+                    <h2 className="text-base sm:text-xl md:text-2xl font-black text-gray-900 leading-tight">
                       Designer
                     </h2>
 
-                    <p className="text-[16px] font-semibold text-gray-600 leading-tight mt-1">
+                    <p className="text-[10px] sm:text-[13px] md:text-[16px] font-semibold text-gray-600 leading-tight mt-1">
                       & Home Renovation
                     </p>
 
-                    <div className="w-14 h-1 rounded-full bg-primary-500 my-2"></div>
+                    <div className="w-8 sm:w-10 md:w-14 h-1 rounded-full bg-primary-500 my-2"></div>
                   </div>
 
                   {/* Glow */}
@@ -382,7 +381,12 @@ const HeroSection = ({
               {/* Staggered Circular Layout of Service Cards */}
               {quickCards.map((card, i) => {
                 const angle = (i * 2 * Math.PI) / quickCards.length;
-                const radius = 190; // Radius of card circle
+                const radius =
+                  window.innerWidth < 640
+                    ? 140 // Mobile
+                    : window.innerWidth < 768
+                      ? 165 // Tablet
+                      : 210; // Desktop
                 const x = radius * Math.cos(angle);
                 const y = radius * Math.sin(angle);
 
@@ -416,14 +420,22 @@ const HeroSection = ({
                         ease: "easeInOut",
                         delay: i * 0.2,
                       }}
-                      className={`flex flex-col items-center justify-center w-28 h-28 bg-white border border-slate-100 shadow-premium hover:shadow-2xl rounded-2xl p-3 transition-all hover:-translate-y-4 hover:scale-110 hover:rotate-2 select-none`}
+                      className={`flex flex-col items-center justify-center
+                      w-24 h-24
+                      sm:w-24 sm:h-24
+                      md:w-24 md:h-24
+                      lg:w-28 lg:h-28
+                      bg-white border border-slate-100 shadow-premium hover:shadow-2xl rounded-2xl p-2 sm:p-3 transition-all hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-105`}
                     >
                       <div
                         className={`p-2.5 rounded-xl bg-gradient-to-br ${card.color} text-white shadow-md group-hover:scale-110 transition-transform`}
                       >
-                        <CardIcon size={20} />
+                        <CardIcon
+                          size={16}
+                          className="sm:text-[22px] md:text-[24px]"
+                        />
                       </div>
-                      <span className="mt-2.5 font-display font-bold text-xs text-dark-800 tracking-tight">
+                      <span className="mt-1.5 font-display font-bold text-[10px] sm:text-[11px] md:text-xs text-dark-800 text-center leading-tight">
                         {card.name}
                       </span>
                     </motion.div>
