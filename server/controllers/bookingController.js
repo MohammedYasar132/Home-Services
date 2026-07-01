@@ -132,14 +132,14 @@ export const createBooking = async (req, res) => {
 // `,
 //     );
     await sendEmail(
-      "🏠 New Service Booking - Fixongo Home Services",
+      `🏠 New Booking | ${fullName} | ${preferredDate} | ${preferredTimeSlot}`,
       `
 <div style="margin:0;padding:30px;background:#f4f7fa;font-family:Arial,sans-serif;">
   <div style="max-width:700px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
 
     <div style="background:#0f766e;padding:25px;text-align:center;">
       <h1 style="margin:0;color:#ffffff;font-size:30px;">
-        🏠 Fixongo Home Services
+        🏠 Home Services
       </h1>
       <p style="margin-top:8px;color:#d1fae5;font-size:15px;">
         New Customer Booking Received
