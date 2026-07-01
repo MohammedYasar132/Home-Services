@@ -63,6 +63,7 @@ const Home = () => {
     setIsModalOpen(false);
     setSelectedService(null);
   };
+  
   return (
     <div className="relative">
       {/* 1. Hero Cover Section */}
