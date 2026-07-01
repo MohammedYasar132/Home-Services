@@ -7,6 +7,8 @@ import sendEmail from "../utils/sendEmail.js";
 // @route   POST /api/bookings
 // @access  Public
 export const createBooking = async (req, res) => {
+  console.log("===== BOOKING REQUEST RECEIVED =====");
+  console.log(req.body);
   try {
     const {
       fullName,
