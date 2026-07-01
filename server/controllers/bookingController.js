@@ -131,127 +131,127 @@ export const createBooking = async (req, res) => {
 // </div>
 // `,
 //     );
-//     await sendEmail(
-//       "🏠 New Service Booking - Fixongo Home Services",
-//       `
-// <div style="margin:0;padding:30px;background:#f4f7fa;font-family:Arial,sans-serif;">
-//   <div style="max-width:700px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
+    await sendEmail(
+      "🏠 New Service Booking - Fixongo Home Services",
+      `
+<div style="margin:0;padding:30px;background:#f4f7fa;font-family:Arial,sans-serif;">
+  <div style="max-width:700px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
 
-//     <div style="background:#0f766e;padding:25px;text-align:center;">
-//       <h1 style="margin:0;color:#ffffff;font-size:30px;">
-//         🏠 Fixongo Home Services
-//       </h1>
-//       <p style="margin-top:8px;color:#d1fae5;font-size:15px;">
-//         New Customer Booking Received
-//       </p>
-//     </div>
+    <div style="background:#0f766e;padding:25px;text-align:center;">
+      <h1 style="margin:0;color:#ffffff;font-size:30px;">
+        🏠 Fixongo Home Services
+      </h1>
+      <p style="margin-top:8px;color:#d1fae5;font-size:15px;">
+        New Customer Booking Received
+      </p>
+    </div>
 
-//     <div style="padding:30px;">
+    <div style="padding:30px;">
 
-//       <p style="font-size:16px;color:#374151;">
-//         Hello,
-//       </p>
+      <p style="font-size:16px;color:#374151;">
+        Hello,
+      </p>
 
-//       <p style="font-size:16px;color:#374151;">
-//         A new customer has successfully booked a service through the
-//         <strong>Fixongo Home Services</strong> website.
-//       </p>
+      <p style="font-size:16px;color:#374151;">
+        A new customer has successfully booked a service through the
+        <strong>Fixongo Home Services</strong> website.
+      </p>
 
-//       <hr style="margin:25px 0;border:none;border-top:1px solid #e5e7eb;">
+      <hr style="margin:25px 0;border:none;border-top:1px solid #e5e7eb;">
 
-//       <h2 style="color:#0f766e;margin-bottom:15px;">
-//         👤 Customer Details
-//       </h2>
+      <h2 style="color:#0f766e;margin-bottom:15px;">
+        👤 Customer Details
+      </h2>
 
-//       <table style="width:100%;border-collapse:collapse;">
+      <table style="width:100%;border-collapse:collapse;">
 
-//         <tr>
-//           <td style="padding:10px;font-weight:bold;">Full Name</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${fullName}</td>
-//         </tr>
+        <tr>
+          <td style="padding:10px;font-weight:bold;">Full Name</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${fullName}</td>
+        </tr>
 
-//         <tr style="background:#f9fafb;">
-//           <td style="padding:10px;font-weight:bold;">Phone Number</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${phone}</td>
-//         </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:10px;font-weight:bold;">Phone Number</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${phone}</td>
+        </tr>
 
-//         <tr>
-//           <td style="padding:10px;font-weight:bold;">Email Address</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${email}</td>
-//         </tr>
+        <tr>
+          <td style="padding:10px;font-weight:bold;">Email Address</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${email}</td>
+        </tr>
 
-//         <tr style="background:#f9fafb;">
-//           <td style="padding:10px;font-weight:bold;">Location</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${location}</td>
-//         </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:10px;font-weight:bold;">Location</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${location}</td>
+        </tr>
 
-//       </table>
+      </table>
 
-//       <hr style="margin:25px 0;border:none;border-top:1px solid #e5e7eb;">
+      <hr style="margin:25px 0;border:none;border-top:1px solid #e5e7eb;">
 
-//       <h2 style="color:#0f766e;margin-bottom:15px;">
-//         🛠️ Service Details
-//       </h2>
+      <h2 style="color:#0f766e;margin-bottom:15px;">
+        🛠️ Service Details
+      </h2>
 
-//       <table style="width:100%;border-collapse:collapse;">
+      <table style="width:100%;border-collapse:collapse;">
 
-//         <tr>
-//           <td style="padding:10px;font-weight:bold;">Category</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${serviceExists.name}</td>
-//         </tr>
+        <tr>
+          <td style="padding:10px;font-weight:bold;">Category</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${serviceExists.name}</td>
+        </tr>
 
-//         <tr style="background:#f9fafb;">
-//           <td style="padding:10px;font-weight:bold;">Selected Service</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${subcategoryExists.name}</td>
-//         </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:10px;font-weight:bold;">Selected Service</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${subcategoryExists.name}</td>
+        </tr>
 
-//         <tr>
-//           <td style="padding:10px;font-weight:bold;">Service Price</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">₹${subcategoryExists.price}</td>
-//         </tr>
+        <tr>
+          <td style="padding:10px;font-weight:bold;">Service Price</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">₹${subcategoryExists.price}</td>
+        </tr>
 
-//         <tr style="background:#f9fafb;">
-//           <td style="padding:10px;font-weight:bold;">Preferred Date</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${preferredDate}</td>
-//         </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:10px;font-weight:bold;">Preferred Date</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${preferredDate}</td>
+        </tr>
 
-//         <tr>
-//           <td style="padding:10px;font-weight:bold;">Preferred Time Slot</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${preferredTimeSlot}</td>
-//         </tr>
+        <tr>
+          <td style="padding:10px;font-weight:bold;">Preferred Time Slot</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${preferredTimeSlot}</td>
+        </tr>
 
-//         <tr style="background:#f9fafb;">
-//           <td style="padding:10px;font-weight:bold;">Additional Notes</td>
-//           <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${notes || "No additional notes provided."}</td>
-//         </tr>
+        <tr style="background:#f9fafb;">
+          <td style="padding:10px;font-weight:bold;">Additional Notes</td>
+          <td style="padding:10px;font-weight:bold;word-break:break-word;overflow-wrap:break-word;white-space:normal;">${notes || "No additional notes provided."}</td>
+        </tr>
 
-//       </table>
+      </table>
 
-//       <div style="margin-top:30px;padding:18px;background:#ecfdf5;border-left:5px solid #10b981;border-radius:6px;">
-//         <strong>📞 Action Required</strong><br><br>
-//         Please contact the customer as soon as possible to confirm the booking and schedule the service.
-//       </div>
+      <div style="margin-top:30px;padding:18px;background:#ecfdf5;border-left:5px solid #10b981;border-radius:6px;">
+        <strong>📞 Action Required</strong><br><br>
+        Please contact the customer as soon as possible to confirm the booking and schedule the service.
+      </div>
 
-//     </div>
+    </div>
 
-//     <div style="background:#111827;color:#d1d5db;text-align:center;padding:20px;">
-//       <h3 style="margin:0;color:#ffffff;">
-//         Fixongo Home Services
-//       </h3>
+    <div style="background:#111827;color:#d1d5db;text-align:center;padding:20px;">
+      <h3 style="margin:0;color:#ffffff;">
+        Fixongo Home Services
+      </h3>
 
-//       <p style="margin-top:10px;font-size:14px;">
-//         Professional • Reliable • Affordable
-//       </p>
+      <p style="margin-top:10px;font-size:14px;">
+        Professional • Reliable • Affordable
+      </p>
 
-//       <p style="margin-top:10px;font-size:12px;color:#9ca3af;">
-//         This is an automated booking notification generated by the Fixongo website.
-//       </p>
-//     </div>
+      <p style="margin-top:10px;font-size:12px;color:#9ca3af;">
+        This is an automated booking notification generated by the Fixongo website.
+      </p>
+    </div>
 
-//   </div>
-// </div>
-// `,
-//     );
+  </div>
+</div>
+`,
+    );
     // Respond with populated fields for response display if needed
     const populatedBooking = await Booking.findById(savedBooking._id)
       .populate("serviceId", "name icon")
