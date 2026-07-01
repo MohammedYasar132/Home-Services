@@ -431,8 +431,12 @@ const HeroSection = ({
                         className={`p-2.5 rounded-xl bg-gradient-to-br ${card.color} text-white shadow-md group-hover:scale-110 transition-transform`}
                       >
                         <CardIcon
-                          size={16}
-                          className="sm:text-[22px] md:text-[24px]"
+                          className="
+                            w-7 h-7
+                            sm:w-8 sm:h-8
+                            md:w-6 md:h-6
+                            lg:w-7 lg:h-7
+                          "
                         />
                       </div>
                       <span className="mt-1.5 font-display font-bold text-[10px] sm:text-[11px] md:text-xs text-dark-800 text-center leading-tight">
